@@ -1,0 +1,36 @@
+# Node modules (huge, auto-generated)
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment files
+.env
+.env.*   # for .env.development, .env.production, etc.
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Debugging and test output
+coverage/
+*.lcov
+
+# Build and dist folders
+dist/
+build/
+
+# PM2 process files
+pids/
+*.pid
+*.seed
+
+# IDE/project config (optional)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
