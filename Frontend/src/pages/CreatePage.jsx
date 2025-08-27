@@ -12,7 +12,7 @@ const CreateNote = () => {
   const handleCreate = async () => {
     console.log({ title, content });
    try {
-    await axios.post("http://localhost:6801/api/notes/",{title,content});
+    await axios.post("https://thinkboard-1kxy.onrender.com/api/notes/",{title,content});
     navigate("/")
      toast.success("Created notes")
    } catch (error) {

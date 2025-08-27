@@ -13,7 +13,7 @@ const[title,settitle] = useState("")
 const[content,setcontent] = useState('')
 async function updateNote(){
     try {
-        await axios.put(`http://localhost:6801/api/notes/${id}`,{title,content},{new:true});
+        await axios.put(`https://thinkboard-1kxy.onrender.com/api/notes/${id}`,{title,content},{new:true});
         navigate("/")
         toast.success("Notes Updated")
     } catch (error) {
