@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const CreateNote = () => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
   const handleCreate = async () => {
     console.log({ title, content });
    try {
-     const res = await axios.post("http://localhost:6801/api/notes/",{title,content});
-     console.log(res);
+    await axios.post("http://localhost:6801/api/notes/",{title,content});
+    navigate("/")
      toast.success("Created notes")
    } catch (error) {
     console.log(error);

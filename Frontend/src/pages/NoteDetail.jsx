@@ -1,18 +1,20 @@
 import React from 'react'
 import { ArrowLeft, Trash2 } from 'lucide-react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { useParams } from 'react-router'
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import {toast} from 'react-hot-toast'
 const EditNote = () => {
+  const navigate = useNavigate();
 const {id} = useParams();
 const[title,settitle] = useState("")
 const[content,setcontent] = useState('')
 async function updateNote(){
     try {
         await axios.put(`http://localhost:6801/api/notes/${id}`,{title,content},{new:true});
+        navigate("/")
         toast.success("Notes Updated")
     } catch (error) {
         console.log(error);
@@ -23,6 +25,7 @@ async function updateNote(){
 async function DeleteNotes(){
     try {
         await axios.delete(`http://localhost:6801/api/notes/${id}`);
+        navigate("/")
         toast.success("Notes deleted")
     } catch (error) {
         console.log(error);
