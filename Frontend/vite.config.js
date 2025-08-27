@@ -8,6 +8,11 @@ export default defineConfig({
    server: {
     host: '0.0.0.0',
     port: 5173 // optional, Render will override with $PORT
+  },
+    preview: {
+    host: '0.0.0.0',
+    port: 5173,
+    allowedHosts: ['thinkboard-1-9vbx.onrender.com']
   }
 
 })
